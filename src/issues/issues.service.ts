@@ -24,27 +24,27 @@ export class IssuesService implements OnApplicationShutdown, OnModuleDestroy {
 
   async onApplicationShutdown(signal?: string) {
     // throw new Error("Method not implemented.");
-    debug(`onApplicationShutdown called: ${signal}`);
-    try {
-      if (this.queue) {
-        await this.queue.close();
-        debug(`onApplicationShutdown this.queue closed`);
-      }
-    } catch (err) {
-      debug(`onApplicationShutdown: ${err}`);
-    }
+    // debug(`onApplicationShutdown called: ${signal}`);
+    // try {
+    //   if (this.queue) {
+    //     await this.queue.close();
+    //     debug(`onApplicationShutdown this.queue closed`);
+    //   }
+    // } catch (err) {
+    //   debug(`onApplicationShutdown: ${err}`);
+    // }
   }
 
   async onModuleDestroy(): Promise<any> {
-    debug(`onModuleDestroy called`);
-    try {
-      if (this.queue) {
-        await this.queue.close();
-        debug(`onModuleDestroy this.queue closed`);
-      }
-    } catch (err) {
-      debug(`onModuleDestroy: ${err}`);
-    }
+    // debug(`onModuleDestroy called`);
+    // try {
+    //   if (this.queue) {
+    //     await this.queue.close();
+    //     debug(`onModuleDestroy this.queue closed`);
+    //   }
+    // } catch (err) {
+    //   debug(`onModuleDestroy: ${err}`);
+    // }
   }
 
   async getIssues(): Promise<string> {

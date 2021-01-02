@@ -6,7 +6,7 @@ import { IssuesModule } from './issues/issues.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { IssueEntity } from './issues/models/issue.entity';
+import { IssueEntity } from './issues/models/issue.entity';
 
 const env = process.env;
 const nodeEnv = env.NODE_ENV || 'development';
@@ -26,6 +26,7 @@ const nodeEnv = env.NODE_ENV || 'development';
         password: configService.get('RDB_PASSWORD'),
         database: configService.get('RDB_DATABASE'),
         timezone: '+08:00',
+        entities: [IssueEntity],
         synchronize: true,
       }),
       inject: [ConfigService],
@@ -37,7 +38,6 @@ const nodeEnv = env.NODE_ENV || 'development';
         redis: {
           host: configService.get('REDIS_HOST'),
           port: parseInt(configService.get('REDIS_PORT') || '6379', 10),
-          name: 'bull-redis',
         },
       }),
       inject: [ConfigService],

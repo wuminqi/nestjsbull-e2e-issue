@@ -43,10 +43,9 @@ describe('AppController (e2e)', () => {
   });
 
   afterEach(async () => {
-    debug('start to close app @after.each');
+    // debug('start to close app @after.each');
     await app.close();
-    await moduleFixture.close();
-    moduleFixture = null;
-    debug('done with close app @after.each');
+    // await moduleFixture.close();
+    // debug('done with close app @after.each');
   });
 });
